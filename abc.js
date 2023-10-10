@@ -6,12 +6,14 @@ function getComputerChoice(){
 
 function returnWinner(playerSelection,computerSelection){
 
+    // if player and comp have the same 
+    if(playerSelection === computerSelection){
+        return `Game Draw both are ${playerSelection}`;
+    }
+
     // if player choose rock
     if(playerSelection === 'rock'){
-        if(computerSelection === 'rock'){
-            return `Game Draw both are ${playerSelection}`;
-        }
-        else if(computerSelection === 'paper'){
+        if(computerSelection === 'paper'){
             return `You Lose!! Computer's ${computerSelection} wins over ${playerSelection}`;
         }
         else if(computerSelection === 'scissor'){
@@ -23,9 +25,6 @@ function returnWinner(playerSelection,computerSelection){
     else if(playerSelection === 'paper'){
         if(computerSelection === 'rock'){
             return `You Win!! Your ${playerSelection} wins over ${computerSelection}`;
-        }
-        else if(computerSelection === 'paper'){
-            return `Game Draw both are ${playerSelection}`;
         }
         else if(computerSelection === 'scissor'){
             return `You Lose!! Computer's ${computerSelection} wins over ${playerSelection}`;
@@ -39,9 +38,6 @@ function returnWinner(playerSelection,computerSelection){
         }
         else if(computerSelection === 'paper'){
             return `You Win!! Your ${playerSelection} wins over ${computerSelection}`;
-        }
-        else if(computerSelection === 'scissor'){
-            return `Game Draw both are ${playerSelection}`;
         }
     }
 }
