@@ -4,11 +4,11 @@ function getComputerChoice(){
     return arr[randomness];
 }
 
-function round(playerSelection,computerSelection){
+function returnWinner(playerSelection,computerSelection){
 
 }
 
 let player = prompt('Rock-Paper-Scissors??');
 player = player.toLowerCase();        // making text lowercase
 let computer = getComputerChoice();
-console.log(round(player,computer));
+console.log(returnWinner(player,computer));
