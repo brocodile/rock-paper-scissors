@@ -19,7 +19,6 @@ function returnWinner(playerSelection,computerSelection){
         }
     }
 
-
     // if player choose paper
     else if(playerSelection === 'paper'){
         if(computerSelection === 'rock'){
@@ -30,6 +29,19 @@ function returnWinner(playerSelection,computerSelection){
         }
         else if(computerSelection === 'scissor'){
             return `You Lose!! Computer's ${computerSelection} wins over ${playerSelection}`;
+        }
+    }
+
+    // if player choose scissor
+    else if(playerSelection === 'scissor'){
+        if(computerSelection === 'rock'){
+            return `You Lose!! Computer's ${computerSelection} wins over ${playerSelection}`;
+        }
+        else if(computerSelection === 'paper'){
+            return `You Win!! Your ${playerSelection} wins over ${computerSelection}`;
+        }
+        else if(computerSelection === 'scissor'){
+            return `Game Draw both are ${playerSelection}`;
         }
     }
 }
