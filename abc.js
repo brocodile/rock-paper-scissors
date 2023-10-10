@@ -77,7 +77,16 @@ function game(){
             computerScore++;
         }    
     }
-    alert(`Total points: \n player: ${playerScore}\n computer: ${computerScore}`);
+    console.log(`Total points: \n player: ${playerScore}\n computer: ${computerScore}`);
+    if(playerScore > computerScore){
+        console.log('player wins the tournament');
+    }
+    else if(computerScore > playerScore){
+        console.log('computer wins the tournament');
+    }
+    else{
+        console.log('Game Draw');
+    }
 }
 
 game();
