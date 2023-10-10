@@ -8,40 +8,41 @@ function returnWinner(playerSelection,computerSelection){
 
     // if player and comp have the same 
     if(playerSelection === computerSelection){
-        return `Game Draw both are ${playerSelection}`;
+        return `Game Draw`;
     }
 
     // if player choose rock
     if(playerSelection === 'rock'){
         if(computerSelection === 'paper'){
-            return `You Lose!! Computer's ${computerSelection} wins over ${playerSelection}`;
+            return `computer wins`;
         }
         else if(computerSelection === 'scissor'){
-            return `You Win!! Your ${playerSelection} wins over ${computerSelection}`;
+            return `player wins`;
         }
     }
 
     // if player choose paper
     else if(playerSelection === 'paper'){
         if(computerSelection === 'rock'){
-            return `You Win!! Your ${playerSelection} wins over ${computerSelection}`;
+            return `player wins`;
         }
         else if(computerSelection === 'scissor'){
-            return `You Lose!! Computer's ${computerSelection} wins over ${playerSelection}`;
+            return `computer wins`;
         }
     }
 
     // if player choose scissor
     else if(playerSelection === 'scissor'){
         if(computerSelection === 'rock'){
-            return `You Lose!! Computer's ${computerSelection} wins over ${playerSelection}`;
+            return `computer wins`;
         }
         else if(computerSelection === 'paper'){
-            return `You Win!! Your ${playerSelection} wins over ${computerSelection}`;
+            return `player wins`;
         }
     }
 }
 
+/*
 let player = prompt('Rock-Paper-Scissor??');
 player = player.toLowerCase();        // lowercasing (making program case-insensetive)
 if(player === 'scissors'){
@@ -49,3 +50,34 @@ if(player === 'scissors'){
 }
 let computer = getComputerChoice();
 console.log(returnWinner(player,computer));
+*/
+
+function game(){
+    let playerScore = 0;
+    let computerScore = 0;
+    let drawScore = 0;
+    for(let i = 0 ; i < 5 ; i++){
+        let player = prompt('Rock-Paper-Scissor??');
+        player = player.toLowerCase();        // lowercasing (making program case-insensetive)
+        if(player === 'scissors'){
+            player = 'scissor';
+        }
+        let computer = getComputerChoice();
+
+        if(returnWinner(player,computer) == 'player wins'){
+            console.log(returnWinner(player,computer));
+            playerScore++;
+        }
+        else if(returnWinner(player,computer) == 'Game Draw'){
+            console.log(returnWinner(player,computer));
+            drawScore++;
+        }
+        else{
+            console.log(returnWinner(player,computer));
+            computerScore++;
+        }    
+    }
+    alert(`Total points: \n player: ${playerScore}\n computer: ${computerScore}`);
+}
+
+game();
